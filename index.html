@@ -73,12 +73,13 @@
 
 <script>
     // --- CONFIGURATION ---
+    // NEW TOKEN APPLIED HERE:
     const GITHUB_PAT = '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';
     const REPO_OWNER = 'Saadpie1';
     const TEMPLATE_REPO_OWNER = 'pages-themes';
     const TEMPLATE_REPO_NAME = 'minimal';
     
-    // Will be defined dynamically when the button is pressed
+    // Will be defined dynamically when the button is pressed (to ensure uniqueness)
     let NEW_REPO_NAME = ''; 
 
     const STATUS_ELEMENT = document.getElementById('deployment-status');
@@ -230,7 +231,7 @@
             updateStatus(`Deployment FAILED: ${error.message}`, true);
             console.error(`❌ Deployment failed: ${error.message}`);
         } finally {
-            // Re-enable button on error or completion to allow the user to try again
+            // Re-enable button on error or completion
             START_BUTTON.disabled = false;
             START_BUTTON.textContent = '🚀 Start Deployment';
         }
